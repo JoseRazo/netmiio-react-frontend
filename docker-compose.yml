@@ -1,0 +1,14 @@
+version: '3.8'
+services:
+  react-app:
+    image: react_app_netmiio
+    container_name: react-netmiio
+    build:
+      context: .
+      dockerfile: Dockerfile
+    volumes:
+      - ./:/app       # ✅ Mantén solo este volumen
+    ports:
+      - "3000:3000"
+    stdin_open: true
+    tty: true
